@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
@@ -72,6 +73,19 @@ export default async function ProjectPage({
           </a>
         )}
       </div>
+
+      {project.coverImage && (
+        <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-xl border border-border">
+          <Image
+            src={project.coverImage}
+            alt={project.title}
+            fill
+            sizes="(min-width: 1024px) 768px, 100vw"
+            priority
+            className="object-cover object-top"
+          />
+        </div>
+      )}
 
       <article
         className="prose prose-invert mt-10 max-w-none border-t border-border pt-10"

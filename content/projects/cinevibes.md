@@ -7,6 +7,7 @@ tags: ["React", "Node.js", "Express", "MongoDB", "Vite", "JWT Auth"]
 featured: true
 repoUrl: "https://github.com/dangkhoa241/cinevibes"
 liveUrl: "https://cinevibes-rho.vercel.app/"
+coverImage: "/projects/cinevibes.webp"
 ---
 
 CineVibes is a full-stack web app for movie enthusiasts to browse films and discuss them in a structured, spoiler-aware way.
