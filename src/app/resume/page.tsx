@@ -154,10 +154,12 @@ export default function ResumePage() {
                     <span className="font-semibold">Technologies: </span>
                     {project.tech}
                   </li>
-                  <li>
-                    <span className="font-semibold">Responsibilities: </span>
-                    {project.responsibilities}
-                  </li>
+                  {project.responsibilities && (
+                    <li>
+                      <span className="font-semibold">Responsibilities: </span>
+                      {project.responsibilities}
+                    </li>
+                  )}
                 </ul>
               </div>
             ))}

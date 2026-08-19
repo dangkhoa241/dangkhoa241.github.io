@@ -13,13 +13,13 @@ export type ResumeProject = {
   org: string;
   description: string;
   tech: string;
-  responsibilities: string;
+  responsibilities?: string;
 };
 
 export const resume = {
   phone: "(350) 217-8342",
   summary:
-    "A junior developer with a desire to become a good software engineer, seeking an organization that can provide a variety of opportunities and allow me to expand my knowledge and enhance my skills while working towards achieving the organizational goals.",
+    "Software engineer and MS Computer Science student at the University of the Pacific, with experience across full-stack development, databases, and AI-powered applications. Looking for a Software Engineering role where I can keep growing and contribute to impactful products.",
   education: [
     {
       title: "MS Computer Science — GPA: 3.76",
@@ -48,8 +48,7 @@ export const resume = {
         "Developed and optimized product features across the full stack, improving system performance and SQL query efficiency for retail management systems used by clients in Japan.",
         "Designed and implemented backend services and application frameworks using Java Spring Boot, and built responsive frontend interfaces with Vue.js.",
         "Worked with PostgreSQL and DB2, performing SQL tuning, query optimization, and database schema design to support high-volume transaction processing.",
-        "Automated deployment, build, and monitoring workflows with Shell scripting, reducing manual intervention and deployment errors.",
-        "Deployed and maintained services on AWS cloud infrastructure, collaborating with the team to improve reliability and scalability.",
+        "Deployed and maintained services on AWS cloud infrastructure, collaborating with the team to improve reliability and scalability. Automated deployment, build, and monitoring workflows with Shell scripting.",
       ],
       tags: ["JavaScript", "HTML", "CSS", "PostgreSQL", "DB2", "Shell", "VueJS", "SQL", "Java Spring Boot", "AWS Cloud Service"],
     },
@@ -61,8 +60,7 @@ export const resume = {
       bullets: [
         "Built and optimized RESTful APIs using Node.js and Express to power POP management dashboards, enabling real-time monitoring of telecom infrastructure.",
         "Developed interactive dashboards with React and Next.js, integrating Highcharts to visualize statistical data and infrastructure status across multiple POP stations.",
-        "Designed and integrated MongoDB schemas to store and query telecom monitoring data efficiently, supporting fast dashboard rendering.",
-        "Collaborated closely with backend and frontend teams to identify and resolve system monitoring issues, improving overall dashboard reliability and user experience.",
+        "Designed and integrated MongoDB schemas to store and query telecom monitoring data efficiently.",
       ],
       tags: ["React.js", "Next.js", "Express", "Node.js", "MongoDB", "Highcharts"],
     },
@@ -73,22 +71,8 @@ export const resume = {
     { label: "Databases", value: "PostgreSQL, MySQL, MongoDB, DB2, SQL Server, Oracle" },
     { label: "Tools", value: "Git, GitHub, SVN, Jira, Trello, AWS, Shell, Highcharts, Jupyter Notebook" },
     { label: "Concepts", value: "Data Structures & Algorithms, OOP, RESTful APIs, Database Design" },
-    {
-      label: "Soft Skills",
-      value:
-        "Communication and team collaboration, problem-solving and critical thinking, time management and organization, adaptability and openness to feedback",
-    },
   ],
   projects: [
-    {
-      name: "Web Taurus – Next Taurus",
-      org: "UNICCS Co., Ltd",
-      description:
-        "Developing sales, inventory, and returns management systems for retail companies in Japan.",
-      tech: "JavaScript, HTML, CSS, PostgreSQL, DB2, Java frameworks",
-      responsibilities:
-        "Developed and maintained the product, coordinated with the team leader to design solutions meeting end-user requirements, and improved performance through SQL and feature optimization.",
-    },
     {
       name: "POP Management System",
       org: "FPT Telecom",
@@ -98,13 +82,18 @@ export const resume = {
       responsibilities: "Built RESTful APIs, implemented interfaces from design, and handled data visualization.",
     },
     {
-      name: "LLM-Powered Natural Language Query System for Healthcare",
-      org: "Course project",
+      name: "CineVibes",
+      org: "Personal project",
       description:
-        "An end-to-end healthcare analytics system that lets users query structured medical data using natural language, auto-generating SQL queries, tables, and visualizations.",
+        "A full-stack movie discussion platform with spoiler-aware, category-based comment threads, trending rankings, and CineBot, an in-app AI chat assistant (Groq-hosted LLM) for movie recommendations and trivia, grounded in the app's own MongoDB catalog via a search tool.",
+      tech: "React, Node.js, Express, MongoDB, Vite, JWT Auth, Groq",
+    },
+    {
+      name: "ML-Assisted Natural Language to SQL Query System",
+      org: "Personal project",
+      description:
+        "A CSV-agnostic natural language to SQL system: users upload any CSV and ask questions in plain English. Pairs a BERT intent classifier (fine-tuned on 1,250 examples across 14 domains) with a self-built, schema-aware rule-based SQL generator — no external LLM API calls.",
       tech: "Python, BERT (bert-base-uncased), Streamlit, SQLite, Pandas, Matplotlib, Seaborn",
-      responsibilities:
-        "Designed and trained an intent classification model, implemented rule-based NL-to-SQL generation, performed data preprocessing, built an interactive Streamlit dashboard, and integrated automated chart generation.",
     },
   ] satisfies ResumeProject[],
 };
