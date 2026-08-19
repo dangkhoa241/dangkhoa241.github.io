@@ -5,6 +5,7 @@ export interface ProjectFrontmatter {
   date: string;
   tags: string[];
   featured?: boolean;
+  order?: number;
   repoUrl?: string;
   liveUrl?: string;
   coverImage?: string;

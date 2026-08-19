@@ -32,7 +32,12 @@ export async function getProjectBySlug(slug: string): Promise<Project> {
 export async function getAllProjects(): Promise<Project[]> {
   const slugs = getAllProjectSlugs();
   const projects = await Promise.all(slugs.map((slug) => getProjectBySlug(slug)));
-  return projects.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return projects.sort((a, b) => {
+    if (a.order != null && b.order != null) return a.order - b.order;
+    if (a.order != null) return -1;
+    if (b.order != null) return 1;
+    return a.date < b.date ? 1 : -1;
+  });
 }
 
 export async function getFeaturedProjects(): Promise<Project[]> {

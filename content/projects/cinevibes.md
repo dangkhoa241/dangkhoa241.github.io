@@ -5,6 +5,7 @@ summary: "A full-stack movie discussion platform with spoiler-aware, category-ba
 date: "2026-08-16"
 tags: ["React", "Node.js", "Express", "MongoDB", "Vite", "JWT Auth"]
 featured: true
+order: 1
 repoUrl: "https://github.com/dangkhoa241/cinevibes"
 liveUrl: "https://cinevibes-rho.vercel.app/"
 coverImage: "/projects/cinevibes.webp"
