@@ -86,7 +86,7 @@ export const resume = {
       org: "Personal project",
       description:
         "A full-stack movie discussion platform with spoiler-aware, category-based comment threads, trending rankings, and CineBot, an in-app AI chat assistant (Groq-hosted LLM) for movie recommendations and trivia, grounded in the app's own MongoDB catalog via a search tool.",
-      tech: "React, Node.js, Express, MongoDB, Vite, JWT Auth, Groq",
+      tech: "React, Node.js, Express, MongoDB, Vite, JWT Auth, Groq, Vitest, Playwright",
     },
     {
       name: "ML-Assisted Natural Language to SQL Query System",
