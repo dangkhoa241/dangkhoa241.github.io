@@ -3,7 +3,7 @@ title: "CineVibes"
 slug: "cinevibes"
 summary: "A full-stack movie discussion platform with spoiler-aware, category-based comment threads and trending rankings."
 date: "2026-08-16"
-tags: ["React", "Node.js", "Express", "MongoDB", "Vite", "JWT Auth", "Groq"]
+tags: ["React", "Node.js", "Express", "MongoDB", "Vite", "JWT Auth", "Groq", "Vitest", "Playwright"]
 featured: true
 order: 1
 repoUrl: "https://github.com/dangkhoa241/cinevibes"
@@ -26,3 +26,9 @@ CineVibes is a full-stack web app for movie enthusiasts to browse films and disc
 ## Architecture
 
 The app is split into two independently deployed services: a React (Vite) frontend on Vercel and an Express/MongoDB API on Render, communicating over CORS-restricted REST endpoints rather than being served from a single origin.
+
+## Testing
+
+- **Backend** — Vitest integration tests against an in-memory MongoDB, covering auth, comments, movies, and the CineBot chat endpoint
+- **Frontend** — Vitest + React Testing Library component tests (header, footer, movie cards, pagination, home page)
+- **End-to-end** — a Playwright suite that spins up both dev servers and drives real browsing, auth, and comment flows
