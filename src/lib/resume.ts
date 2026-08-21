@@ -70,7 +70,7 @@ export const resume = {
     { label: "Frameworks", value: "React.js, Next.js, Vue.js, Node.js, Express, Spring Boot, Bootstrap" },
     { label: "Databases", value: "PostgreSQL, MySQL, MongoDB, DB2, SQL Server, Oracle" },
     { label: "Tools", value: "Git, GitHub, SVN, Jira, Trello, AWS, Shell, Highcharts, Jupyter Notebook" },
-    { label: "Concepts", value: "Data Structures & Algorithms, OOP, RESTful APIs, Database Design" },
+    { label: "Concepts", value: "Data Structures & Algorithms, OOP, RESTful APIs, Database Design, Full-stack Development" },
   ],
   projects: [
     {
