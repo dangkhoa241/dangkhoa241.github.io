@@ -94,6 +94,8 @@ export default async function ProjectPage({
         )}
       </div>
 
+      {project.reportNote && <p className="mt-2 font-mono text-xs text-muted-dim">{project.reportNote}</p>}
+
       {project.coverImage && (
         <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-xl border border-border">
           <Image

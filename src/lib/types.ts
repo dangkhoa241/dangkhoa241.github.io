@@ -10,6 +10,7 @@ export interface ProjectFrontmatter {
   liveUrl?: string;
   reportUrlEn?: string;
   reportUrlVn?: string;
+  reportNote?: string;
   coverImage?: string;
 }
 

@@ -9,6 +9,7 @@ order: 3
 coverImage: "/projects/pop-inventory.webp"
 reportUrlEn: "/reports/pop-inventory-report-en.pdf"
 reportUrlVn: "/reports/pop-inventory-report-vn.pdf"
+reportNote: "The Vietnamese report is the original; the English version is a translation and has some formatting issues."
 ---
 
 A full-stack infrastructure dashboard built during my internship at FPT Telecom's Southern Infrastructure Development and Management Center (INF MN). Before this project, engineers had to pull POP (telecom station) status, incident counts, and offline-customer numbers through a Telegram chatbot as raw, unformatted data — slow, hard to compare over time, and impossible to visualize. This app replaced that workflow with a proper web dashboard.
