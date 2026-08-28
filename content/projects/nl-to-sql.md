@@ -5,6 +5,7 @@ summary: "A CSV-agnostic natural language to SQL system pairing a fine-tuned BER
 date: "2026-08-19"
 tags: ["Python", "BERT", "PyTorch", "Hugging Face Transformers", "Streamlit", "SQLite", "Pandas"]
 featured: true
+order: 2
 repoUrl: "https://github.com/dangkhoa241/ML-assisted-natural-language-to-SQL-query-system"
 liveUrl: "https://ml-assisted-natural-language-to-sql-query-system.streamlit.app/"
 coverImage: "/projects/nl-to-sql.webp"

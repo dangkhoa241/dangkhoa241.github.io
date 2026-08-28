@@ -6,6 +6,15 @@ export function GithubIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
+export function GlobeIcon({ className = "size-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2c2.5 2.7 3.9 6.2 3.9 10s-1.4 7.3-3.9 10c-2.5-2.7-3.9-6.2-3.9-10S9.5 4.7 12 2Z" />
+    </svg>
+  );
+}
+
 export function LinkedinIcon({ className = "size-5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">

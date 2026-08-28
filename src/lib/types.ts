@@ -8,6 +8,8 @@ export interface ProjectFrontmatter {
   order?: number;
   repoUrl?: string;
   liveUrl?: string;
+  reportUrlEn?: string;
+  reportUrlVn?: string;
   coverImage?: string;
 }
 

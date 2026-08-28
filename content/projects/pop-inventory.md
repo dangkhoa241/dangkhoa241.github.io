@@ -5,12 +5,15 @@ summary: "An internal dashboard built for FPT Telecom's Southern Infrastructure 
 date: "2026-08-28"
 tags: ["React", "Next.js", "Express", "Node.js", "MongoDB", "Highcharts", "ApexCharts", "Data Visualization"]
 featured: true
+order: 3
 coverImage: "/projects/pop-inventory.webp"
+reportUrlEn: "/reports/pop-inventory-report-en.pdf"
+reportUrlVn: "/reports/pop-inventory-report-vn.pdf"
 ---
 
 A full-stack infrastructure dashboard built during my internship at FPT Telecom's Southern Infrastructure Development and Management Center (INF MN). Before this project, engineers had to pull POP (telecom station) status, incident counts, and offline-customer numbers through a Telegram chatbot as raw, unformatted data — slow, hard to compare over time, and impossible to visualize. This app replaced that workflow with a proper web dashboard.
 
-This was a company project built on internal infrastructure data, so there's no public repo or live demo here — the screenshots below are pulled directly from my internship report.
+This was a company project built on internal infrastructure data, so there's no public repo or live demo here — see the full graduation internship report (linked above, in English or Vietnamese) for the complete technology evaluation, database design, and use-case specs behind it. The screenshots below are pulled directly from that report.
 
 ## Features
 

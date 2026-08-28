@@ -72,6 +72,26 @@ export default async function ProjectPage({
             live site <ArrowUpRightIcon className="size-3.5" />
           </a>
         )}
+        {project.reportUrlEn && (
+          <a
+            href={project.reportUrlEn}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-foreground transition-colors hover:text-accent"
+          >
+            report (EN) <ArrowUpRightIcon className="size-3.5" />
+          </a>
+        )}
+        {project.reportUrlVn && (
+          <a
+            href={project.reportUrlVn}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-foreground transition-colors hover:text-accent"
+          >
+            report (VN) <ArrowUpRightIcon className="size-3.5" />
+          </a>
+        )}
       </div>
 
       {project.coverImage && (

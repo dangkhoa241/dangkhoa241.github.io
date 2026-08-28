@@ -4,7 +4,7 @@ import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 import { siteConfig } from "@/lib/config";
 import { resume, type ResumeEntry } from "@/lib/resume";
-import { GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from "@/components/icons";
+import { GithubIcon, GlobeIcon, LinkedinIcon, MailIcon, PhoneIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Resume",
@@ -106,6 +106,14 @@ export default function ResumePage() {
                 <GithubIcon className="size-3.5" />
                 {siteConfig.social.github.replace("https://", "")}
               </a>
+              <span className="text-black/30">|</span>
+              <a
+                href={siteConfig.websiteUrl}
+                className="inline-flex items-center gap-1.5 underline decoration-black/30 underline-offset-2"
+              >
+                <GlobeIcon className="size-3.5" />
+                {siteConfig.websiteUrl.replace("https://", "")}
+              </a>
             </div>
           </header>
 
@@ -150,6 +158,12 @@ export default function ResumePage() {
                     <span className="font-semibold">Description: </span>
                     {project.description}
                   </li>
+                  {project.testing && (
+                    <li>
+                      <span className="font-semibold">Testing & CI/CD: </span>
+                      {project.testing}
+                    </li>
+                  )}
                   <li>
                     <span className="font-semibold">Technologies: </span>
                     {project.tech}
