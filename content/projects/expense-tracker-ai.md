@@ -13,6 +13,8 @@ coverImage: "/projects/expense-tracker-ai.webp"
 
 ExpenseTracker is a fully client-side personal finance app — every expense is logged, filtered, charted, and exported entirely in the browser via `localStorage`, with no backend, database, or accounts.
 
+Built end-to-end with [Claude Code](https://claude.com/claude-code) as an active collaborator rather than just autocomplete — see below for what that looked like in practice.
+
 ## Features
 
 - **Expense tracking** — add/edit/delete with search and filtering by category, date range, and free text
@@ -21,7 +23,7 @@ ExpenseTracker is a fully client-side personal finance app — every expense is 
 - **Multi-format export** — CSV, JSON, and PDF across four report shapes (raw data, tax report by category, monthly summary, category analysis), with its own independent date/category filtering
 - **Analytics pages** — all-time top-categories and top-vendors rankings, backed by pure, unit-tested aggregation functions
 
-## Engineering practices
+## Engineering practices (with Claude Code)
 
 - Evaluated three independent implementations of the export feature side by side — a simple one-button export, a filtered multi-format export, and a "cloud" export center — before merging the strongest, real parts of each. The "cloud" branch's integrations were deliberately left out once review showed they were UI-only stand-ins with no real backend behind them.
 - That review caught a CSV formula-injection gap (an unescaped leading `=`, `+`, `-`, or `@` in an exported cell can be interpreted as a formula by spreadsheet apps), fixed before merging.
