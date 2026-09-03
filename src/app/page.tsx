@@ -172,6 +172,25 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      <section className="mt-28">
+        <Container>
+          <Reveal>
+            <h2 className="flex items-center gap-3 font-mono text-lg font-medium text-foreground sm:text-xl">
+              Foundations
+              <span className="h-px flex-1 bg-border sm:w-32 sm:flex-none" />
+            </h2>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {resume.skills
+                .find((group) => group.label === "Concepts")
+                ?.value.split(",")
+                .map((concept) => <Badge key={concept}>{concept.trim()}</Badge>)}
+            </div>
+          </Reveal>
+        </Container>
+      </section>
     </>
   );
 }
