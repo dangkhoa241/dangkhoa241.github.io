@@ -10,7 +10,7 @@ export const siteConfig = {
     github: "https://github.com/dangkhoa241",
     linkedin: "https://linkedin.com/in/dangkhoa241",
   },
-  resumeUrl: "/KhoaThaiDangTran_Resume.pdf",
+  resumeUrl: "/Khoa_Thai_Dang_Tran_Resume.pdf",
 };
 
 export type SiteConfig = typeof siteConfig;

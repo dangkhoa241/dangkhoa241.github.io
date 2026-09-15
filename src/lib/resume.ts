@@ -20,7 +20,7 @@ export type ResumeProject = {
 export const resume = {
   phone: "(350) 217-8342",
   summary:
-    "Software engineer and MS Computer Science student (GPA 3.76, graduating December 2026) at the University of the Pacific, with 2+ years of professional experience across full-stack development, databases, and AI-powered applications. Strong foundation in data structures & algorithms, database design, and automated testing/CI pipelines. Looking for a Software Engineering role where I can keep growing and contribute to impactful products.",
+    "Software engineer and MS Computer Science student at the University of the Pacific, with 2+ years of professional experience across full-stack development, databases, and AI-powered applications. Strong foundation in data structures & algorithms, database design, and automated testing/CI pipelines. Looking for a Software Engineering role where I can keep growing and contribute to impactful products.",
   education: [
     {
       title: "MS Computer Science — GPA: 3.76",
@@ -66,15 +66,15 @@ export const resume = {
     },
   ] satisfies ResumeEntry[],
   skills: [
-    { label: "Languages", value: "Java, JavaScript, Python, C++, C#, PHP, HTML, CSS, SQL, TSQL" },
-    { label: "Frameworks", value: "React.js, Next.js, Vue.js, Node.js, Express, Spring Boot, Bootstrap" },
+    { label: "Languages", value: "JavaScript, Python, Java, TypeScript, C++, C#, HTML, CSS, SQL, TSQL" },
+    { label: "Frameworks", value: "React.js, Next.js, Vue.js, Node.js, Express, Spring Boot, Bootstrap, Tailwind CSS" },
     { label: "Databases", value: "PostgreSQL, MySQL, MongoDB, DB2, SQL Server, Oracle" },
-    { label: "Testing & CI/CD", value: "Vitest, Playwright, Cypress, GitHub Actions" },
-    { label: "Tools", value: "Git, GitHub, SVN, Jira, Trello, AWS, Shell, Highcharts, Jupyter Notebook" },
+    { label: "Testing & CI/CD", value: "Vitest, Playwright, GitHub Actions" },
+    { label: "Tools", value: "Git, GitHub, SVN, Slack, AWS, Shell, Highcharts, Jupyter Notebook, Claude Code (AI-assisted development)" },
     {
       label: "Concepts",
       value:
-        "Object-Oriented Programming/Design, Data Structures & Algorithms, RESTful APIs, Database Design, Full-Stack Development, LLM Integration & Prompt Engineering, Agentic/Tool-Use AI Systems",
+        "Object-Oriented Programming/Design, Data Structures & Algorithms, RESTful APIs, Database Design, Full-Stack Development, Agile/Scrum, LLM Integration & Prompt Engineering, Agentic/Tool-Use AI Systems",
     },
   ],
   projects: [
@@ -85,7 +85,7 @@ export const resume = {
         "Full-stack movie discussion platform with spoiler-aware, category-based comment threads, trending rankings, and CineBot, an in-app AI chat assistant (Groq-hosted LLM) for movie recommendations and trivia, grounded in the app's own MongoDB catalog via a search tool.",
       testing:
         "Designed the test strategy and automation framework: unit/integration tests (Vitest), end-to-end tests (Playwright/Cypress), and a GitHub Actions pipeline running the full test suite, lint, and build on every push/PR.",
-      tech: "React, Node.js, Express, MongoDB, Vite, JWT Auth, Groq, Vitest, Playwright, Cypress, GitHub Actions",
+      tech: "React, Node.js, Express, MongoDB, Vite, JWT Auth, Groq, Vitest, Playwright, GitHub Actions",
     },
     {
       name: "ML-Assisted Natural Language to SQL Query System",
@@ -95,11 +95,11 @@ export const resume = {
       tech: "Python, BERT (bert-base-uncased), PyTorch, Streamlit, SQLite, Pandas, Matplotlib, Seaborn",
     },
     {
-      name: "POP Management System",
-      org: "FPT Telecom",
+      name: "ExpenseTracker",
+      org: "Personal project",
       description:
-        "Dashboard to manage a telecom station system: statistics, POP status, infrastructure problem monitoring, and data visualization.",
-      tech: "ReactJS, NextJS, Express, NodeJS, MongoDB, Highcharts",
+        "Client-only expense tracker (logging/filtering, budgets, dashboard analytics, CSV/JSON/PDF export) built end-to-end in close collaboration with Claude Code: compared three parallel implementations of the export feature, caught and fixed a CSV-injection security bug the comparison surfaced, and verified every change with lint, a strict-mode TypeScript build, and the Vitest suite before merging.",
+      tech: "Next.js, React, TypeScript, Tailwind CSS, Recharts, jsPDF, Vitest",
     },
   ] as ResumeProject[],
 };
