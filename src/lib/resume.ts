@@ -20,7 +20,7 @@ export type ResumeProject = {
 export const resume = {
   phone: "(350) 217-8342",
   summary:
-    "Software engineer and MS Computer Science student at the University of the Pacific, with 2+ years of professional experience across full-stack development, databases, and AI-powered applications. Strong foundation in data structures & algorithms, database design, and automated testing/CI pipelines. Looking for a Software Engineering role where I can keep growing and contribute to impactful products.",
+    "Software engineer and MS Computer Science student at the University of the Pacific, with 2+ years of professional experience across full-stack development, databases, and AI-powered applications. Strong foundation in data structures & algorithms, database design, and automated testing/CI pipelines. Seeking a Software Engineering role to contribute to impactful products.",
   education: [
     {
       title: "MS Computer Science — GPA: 3.76",
@@ -46,9 +46,9 @@ export const resume = {
       start: "Nov. 2022",
       end: "Dec. 2024",
       bullets: [
-        "Architected and implemented backend services and application frameworks in Java Spring Boot (object-oriented design) with responsive Vue.js frontends, delivering full-stack features for retail management systems used by clients in Japan.",
-        "Improved system performance and SQL query efficiency through query tuning, indexing, and schema design on PostgreSQL and DB2, supporting high-volume transaction processing.",
-        "Deployed and maintained services on AWS cloud infrastructure, collaborating with a cross-functional team to keep the platform stable, scalable, and production-ready; automated deployment, build, and monitoring workflows with Shell scripting.",
+        "Architected and delivered full-stack features for retail management systems used by clients in Japan, building backend services in Java Spring Boot and responsive frontends in JavaScript and Vue.js.",
+        "Improved SQL query efficiency and system performance through query tuning, indexing, and schema design on PostgreSQL and DB2, supporting high-volume transaction processing.",
+        "Deployed and maintained services on AWS, collaborating with a cross-functional team to keep the platform stable and production-ready; automated deployment, build, and monitoring workflows with Shell scripting.",
       ],
       tags: ["JavaScript", "HTML", "CSS", "PostgreSQL", "DB2", "Shell", "VueJS", "SQL", "Java Spring Boot", "AWS Cloud Service"],
     },
@@ -58,8 +58,8 @@ export const resume = {
       start: "Dec. 2021",
       end: "June 2022",
       bullets: [
-        "Built and optimized RESTful APIs using Node.js and Express to power POP management dashboards, enabling real-time monitoring of telecom infrastructure.",
-        "Developed interactive dashboards with React and Next.js, integrating Highcharts to visualize statistical data and infrastructure status across multiple POP stations.",
+        "Built RESTful APIs with Node.js and Express to power POP management dashboards for real-time telecom monitoring.",
+        "Developed interactive dashboards in React and Next.js, integrating Highcharts to visualize data across multiple POP stations.",
         "Designed and integrated MongoDB schemas to store and query telecom monitoring data efficiently.",
       ],
       tags: ["React.js", "Next.js", "Express", "Node.js", "MongoDB", "Highcharts"],
@@ -84,7 +84,7 @@ export const resume = {
       description:
         "Full-stack movie discussion platform with spoiler-aware, category-based comment threads, trending rankings, and CineBot, an in-app AI chat assistant (Groq-hosted LLM) for movie recommendations and trivia, grounded in the app's own MongoDB catalog via a search tool.",
       testing:
-        "Designed the test strategy and automation framework: unit/integration tests (Vitest), end-to-end tests (Playwright/Cypress), and a GitHub Actions pipeline running the full test suite, lint, and build on every push/PR.",
+        "Designed the test strategy and automation framework: unit/integration tests (Vitest), end-to-end tests (Playwright), and a GitHub Actions pipeline running the full test suite, lint, and build on every push/PR.",
       tech: "React, Node.js, Express, MongoDB, Vite, JWT Auth, Groq, Vitest, Playwright, GitHub Actions",
     },
     {
