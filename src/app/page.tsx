@@ -156,7 +156,7 @@ export default function Home() {
           </Reveal>
           <div className="mt-8 space-y-6">
             {resume.skills
-              .filter((group) => ["Languages", "Frameworks", "Databases", "Tools"].includes(group.label))
+              .filter((group) => ["Languages", "Frameworks", "Databases", "Cloud & Tools"].includes(group.label))
               .map((group, i) => (
                 <Reveal key={group.label} delay={i * 80}>
                   <div>

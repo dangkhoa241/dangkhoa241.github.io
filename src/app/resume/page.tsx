@@ -151,7 +151,24 @@ export default function ResumePage() {
               <div key={project.name} className="mt-3 break-inside-avoid first:mt-2">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <span className="font-bold underline decoration-black/30">{project.name}</span>
-                  <span className="text-sm italic text-black/90">{project.org}</span>
+                  <span className="flex items-baseline gap-2 text-sm italic text-black/90">
+                    {project.org}
+                    {(project.liveUrl || project.repoUrl) && (
+                      <span className="not-italic">
+                        {project.liveUrl && (
+                          <a href={project.liveUrl} className="text-accent underline decoration-accent/30">
+                            Live Demo
+                          </a>
+                        )}
+                        {project.liveUrl && project.repoUrl && " · "}
+                        {project.repoUrl && (
+                          <a href={project.repoUrl} className="text-accent underline decoration-accent/30">
+                            Source Code
+                          </a>
+                        )}
+                      </span>
+                    )}
+                  </span>
                 </div>
                 <ul className="mt-1 ml-5 list-disc space-y-0.5 text-[0.93rem] leading-snug text-black/90">
                   <li>
