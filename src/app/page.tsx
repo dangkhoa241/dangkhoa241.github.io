@@ -18,7 +18,14 @@ function ExperienceRow({ entry }: { entry: ResumeEntry }) {
           {entry.title} <span className="text-muted">–</span> {entry.org}
         </h3>
         {entry.bullets.length > 0 && (
-          <p className="mt-3 leading-relaxed text-muted">{entry.bullets.join(" ")}</p>
+          <ul className="mt-3 space-y-2">
+            {entry.bullets.map((bullet) => (
+              <li key={bullet} className="flex gap-2 leading-relaxed text-muted">
+                <span className="mt-0.5 shrink-0 text-accent">▹</span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
         )}
         {entry.tags && entry.tags.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-2">
