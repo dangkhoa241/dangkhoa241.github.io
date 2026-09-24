@@ -22,7 +22,7 @@ export type ResumeProject = {
 export const resume = {
   phone: "(350) 217-8342",
   summary:
-    "Software engineer and MS Computer Science student (graduating December 2026) with 2+ years of professional full-stack experience delivering production systems in Java Spring Boot, Vue.js, and PostgreSQL for major Japanese retail chains, with shipped LLM-integration work and a testing-first approach across unit, integration, and end-to-end suites wired into CI.",
+    "Software engineer and MS Computer Science student (graduating December 2026) with 2+ years of professional full-stack experience building production systems in Java Spring Boot, JavaScript, Vue.js, and PostgreSQL for major Japanese retail chains. Shipped LLM-integrated features and write tests at every level (unit, integration, end-to-end) wired into CI.",
   education: [
     {
       title: "MS Computer Science — GPA: 3.76",
@@ -50,8 +50,8 @@ export const resume = {
       bullets: [
         "Architected and delivered full-stack features for TAURUS, a core retail ERP covering purchase ordering, SKU-level inventory, and departmental P&L, used by major Japanese chains including Don Quijote, Welcia, and Sundrug, built with Java Spring Boot and responsive frontends in JavaScript and Vue.js.",
         "Reduced query response times by 40% through SQL tuning, indexing, and schema redesign on PostgreSQL and DB2, supporting high-volume transaction processing.",
+        "Cut a dashboard stored procedure's runtime from 10 minutes to 30 seconds by isolating the slow join and indexing the key field.",
         "Deployed and maintained services on AWS, automating build, deployment, and monitoring workflows with Shell scripting to cut manual release effort.",
-        "Collaborated with product and QA counterparts in an Agile workflow, contributing to sprint planning and peer code review.",
         "Debugged and resolved production issues reported by client teams, tracing defects across the Spring Boot backend and Vue.js frontend.",
       ],
       tags: ["Java Spring Boot", "JavaScript", "Vue.js", "PostgreSQL", "DB2", "SQL", "AWS", "Shell", "HTML", "CSS"],
