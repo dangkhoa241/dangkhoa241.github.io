@@ -8,6 +8,7 @@ featured: true
 order: 0
 repoUrl: "https://github.com/dangkhoa241/us-weather-pipeline"
 liveUrl: "https://us-weather-pipeline.vercel.app"
+coverImage: "/projects/us-weather-pipeline.webp"
 ---
 
 An end-to-end data pipeline and dashboard that collects forecasts from the National Weather Service and 4 Open-Meteo-sourced models, scores them against what actually happened, and explains 3 years of weather for 53 US cities.
