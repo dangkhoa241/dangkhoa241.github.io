@@ -85,10 +85,10 @@ export const resume = {
       name: "US Weather Forecast Pipeline",
       org: "Personal project",
       description:
-        "End-to-end data platform (NWS + Open-Meteo → MongoDB → ClickHouse → Redis → Hono API → React) holding 1M+ hourly observations and 1.8M forecast snapshots for 53 US cities, with idempotent incremental loads and data-quality checks. Deployed serverless on AWS as infrastructure as code (SAM/CloudFormation): Lambda + EventBridge scheduled collection and ETL, S3 archive, live dashboard data via CloudFront, SNS alerts, and least-privilege IAM, all at $0 on the free tier. Measures forecast accuracy of NWS and 4 weather models (ECMWF most accurate: 2.1°F average error 1 day ahead), visualized in a D3 dashboard with US map → city → month → day drill-down.",
+        "End-to-end data platform (NWS + Open-Meteo → MongoDB → ClickHouse → Redis → Hono API → React/D3) holding 1.7M+ hourly observations and 3M+ forecast snapshots for 53 US cities, with idempotent incremental loads and data-quality checks. Deployed serverless on AWS as infrastructure as code (SAM): Lambda + EventBridge scheduled collection and ETL, S3 archive, live dashboard data via CloudFront, SNS heat alerts, and least-privilege IAM, all at $0 on the free tier. Measures forecast accuracy of NWS and 4 weather models (ECMWF most accurate: 2.0°F average error 1 day ahead), with a forecast replay and a D3 dashboard with US map → city → month → day drill-down.",
       testing:
-        "Directed Claude Code through 4 compare-and-review rounds of 3 parallel builds (Redis caching cut p95 latency 12×); fixed SQL/NoSQL-injection and IAM flaws from security reviews; 107 tests in CI.",
-      tech: "Node.js, Hono, TypeScript, React, D3, MongoDB, ClickHouse, Redis, Docker, AWS (Lambda, S3, CloudFront, SAM), Vitest",
+        "Directed Claude Code to build 3 versions of each of 5 key features and kept the best each time (Redis caching cut p95 latency 12×); fixed SQL/NoSQL-injection and IAM flaws from security reviews; 209 tests in CI.",
+      tech: "Node.js, Hono, TypeScript, React, D3, MongoDB, ClickHouse, Redis, Docker, AWS (Lambda, S3, CloudFront, SNS, SAM), Vitest, Playwright",
       repoUrl: "https://github.com/dangkhoa241/us-weather-pipeline",
       liveUrl: "https://us-weather-pipeline.vercel.app",
     },
