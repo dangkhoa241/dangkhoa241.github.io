@@ -7,6 +7,24 @@ import { GraduationCapIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/config";
 import { resume, type ResumeEntry } from "@/lib/resume";
 
+function splitSkills(value: string): string[] {
+  const items: string[] = [];
+  let depth = 0;
+  let current = "";
+  for (const char of value) {
+    if (char === "(") depth++;
+    if (char === ")") depth--;
+    if (char === "," && depth === 0) {
+      items.push(current.trim());
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+  if (current.trim()) items.push(current.trim());
+  return items;
+}
+
 function ExperienceRow({ entry }: { entry: ResumeEntry }) {
   return (
     <div className="grid grid-cols-1 gap-x-8 gap-y-3 border-t border-border py-8 first:border-t-0 first:pt-0 sm:grid-cols-[160px_1fr]">
@@ -169,8 +187,8 @@ export default function Home() {
                   <div>
                     <p className="font-mono text-xs uppercase tracking-wide text-muted-dim">{group.label}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                      {group.value.split(",").map((tech) => (
-                        <Badge key={tech}>{tech.trim()}</Badge>
+                      {splitSkills(group.value).map((tech) => (
+                        <Badge key={tech}>{tech}</Badge>
                       ))}
                     </div>
                   </div>
@@ -190,10 +208,11 @@ export default function Home() {
           </Reveal>
           <Reveal delay={80}>
             <div className="mt-8 flex flex-wrap gap-2">
-              {resume.skills
-                .find((group) => group.label === "Concepts")
-                ?.value.split(",")
-                .map((concept) => <Badge key={concept}>{concept.trim()}</Badge>)}
+              {splitSkills(resume.skills.find((group) => group.label === "Concepts")?.value ?? "").map(
+                (concept) => (
+                  <Badge key={concept}>{concept}</Badge>
+                ),
+              )}
             </div>
           </Reveal>
         </Container>
