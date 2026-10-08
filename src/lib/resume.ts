@@ -25,7 +25,7 @@ export const resume = {
     "Software engineer and MS Computer Science student (graduating December 2026) with 2+ years of full-stack experience building production systems in Java Spring Boot, Vue.js, and PostgreSQL for major Japanese retail chains. Builds data pipelines, serverless AWS apps, and RAG/LLM features, with tests at every level wired into CI.",
   education: [
     {
-      title: "MS Computer Science — GPA: 3.76",
+      title: "MS Computer Science — GPA: 3.86",
       org: "University of the Pacific",
       location: "Stockton, CA",
       start: "Jan. 2025",
