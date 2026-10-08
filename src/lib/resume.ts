@@ -22,7 +22,7 @@ export type ResumeProject = {
 export const resume = {
   phone: "(350) 217-8342",
   summary:
-    "Software engineer and MS Computer Science student (graduating December 2026) with 2+ years of professional full-stack experience building production systems in Java Spring Boot, JavaScript, Vue.js, and PostgreSQL for major Japanese retail chains. Builds data pipelines and serverless AWS applications, ships LLM-integrated features, and writes tests at every level (unit, integration, end-to-end) wired into CI.",
+    "Software engineer and MS Computer Science student (graduating December 2026) with 2+ years of full-stack experience building production systems in Java Spring Boot, Vue.js, and PostgreSQL for major Japanese retail chains. Builds data pipelines, serverless AWS apps, and RAG/LLM features, with tests at every level wired into CI.",
   education: [
     {
       title: "MS Computer Science — GPA: 3.76",
@@ -52,7 +52,6 @@ export const resume = {
         "Reduced query response times by 40% through SQL tuning, indexing, and schema redesign on PostgreSQL and DB2.",
         "Cut a dashboard stored procedure's runtime from 10 minutes to 30 seconds by isolating the slow join and indexing the key field.",
         "Deployed and maintained services on AWS, automating build, deployment, and monitoring workflows with Shell scripts.",
-        "Debugged and resolved production issues reported by client teams, tracing defects across the Spring Boot backend and Vue.js frontend.",
       ],
       tags: ["Java Spring Boot", "JavaScript", "Vue.js", "PostgreSQL", "DB2", "SQL", "AWS", "Shell", "HTML", "CSS"],
     },
@@ -70,14 +69,15 @@ export const resume = {
   ] satisfies ResumeEntry[],
   skills: [
     { label: "Languages", value: "JavaScript, TypeScript, Python, Java, C++, C#, SQL, HTML, CSS" },
-    { label: "Frameworks", value: "React.js, Next.js, Vue.js, Node.js, Express, Spring Boot, Tailwind CSS, Hono, D3" },
+    { label: "Frameworks", value: "React.js, Next.js, Vue.js, Node.js, Express, Spring Boot, FastAPI, Tailwind CSS, Hono, D3" },
     { label: "Databases", value: "PostgreSQL, MySQL, MongoDB, DB2, SQL Server, Oracle, ClickHouse, Redis" },
     { label: "Testing & CI/CD", value: "Vitest, Playwright, unit testing, integration testing, end-to-end testing, GitHub Actions" },
     { label: "Cloud & Tools", value: "AWS (Lambda, S3, CloudFront, SNS, IAM), Docker, Vercel, Git, GitHub, Shell, Claude Code" },
+    { label: "AI/ML", value: "PyTorch, Hugging Face Transformers, BERT fine-tuning, NLP, ONNX Runtime, RAG, LLM APIs (Groq)" },
     {
       label: "Concepts",
       value:
-        "Object-Oriented Programming (OOP), Data Structures and Algorithms, RESTful APIs, Database Design, Data Pipelines/ETL, Serverless, Infrastructure as Code, Agile/Scrum, Machine Learning, NLP, LLM Integration, Prompt Engineering, AI Agents",
+        "Object-Oriented Programming (OOP), Data Structures and Algorithms, RESTful APIs, Database Design, Data Pipelines/ETL, Serverless, Infrastructure as Code, Agile/Scrum, LLM Integration, Prompt Engineering, AI Agents",
     },
   ],
   projects: [
@@ -109,8 +109,8 @@ export const resume = {
       description:
         "Routes each question by intent with a fine-tuned BERT model, retrieves only the matching business-glossary definitions (e.g., \"ARR\", \"active account\"), and has gpt-oss-120b generate the SQL, falling back to gpt-oss-20b and a rule-based generator. On a held-out domain never used for tuning (settings frozen before testing), accuracy on definition-dependent questions rose from 0% to 95%, within 2.5 points of an oracle.",
       testing:
-        "Diagnosed why naive few-shot RAG lowered accuracy (99.2% to 93.3%): retrieval matched the question's topic, not the SQL structure it needed. A SELECT-only SQL safety layer blocked 13 prompt-injection variants in tests. Exported BERT to int8 ONNX Runtime, cutting serving memory from 754 MB to 243 MB to run on free hosting.",
-      tech: "Python, FastAPI, React, TypeScript, BERT, ONNX Runtime, RAG, Groq, SQLite, Vercel, Render",
+        "Diagnosed why naive few-shot RAG lowered accuracy (99.2% to 93.3%): retrieval matched the question's topic, not the SQL structure it needed. A SELECT-only SQL safety layer blocked 13 prompt-injection variants in tests; all gpt-oss-120b benchmark runs cost under $0.25. Exported BERT to int8 ONNX Runtime, cutting serving memory from 754 MB to 243 MB to run on free hosting.",
+      tech: "Python, FastAPI, React, TypeScript, BERT, ONNX Runtime, RAG, Groq, SQLite, pytest, Vercel, Render",
       repoUrl: "https://github.com/dangkhoa241/RAG-assisted-natural-language-to-SQL-query-system",
       liveUrl: "https://nl2sql-assistant.vercel.app",
     },
