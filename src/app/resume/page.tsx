@@ -40,6 +40,7 @@ function EntryRow({ entry }: { entry: ResumeEntry }) {
         <span className="italic text-black/90">{entry.title}</span>
         {entry.location && <span className="text-sm italic text-black/90">{entry.location}</span>}
       </div>
+      {entry.orgDescription && <p className="text-sm italic text-black/70">{entry.orgDescription}</p>}
       {entry.bullets.length > 0 && (
         <ul className="mt-1 ml-5 list-disc space-y-0.5 text-[0.93rem] leading-snug text-black/90">
           {entry.bullets.map((bullet) => (

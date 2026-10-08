@@ -1,6 +1,7 @@
 export type ResumeEntry = {
   title: string;
   org: string;
+  orgDescription?: string;
   location?: string;
   start: string;
   end: string;
@@ -45,6 +46,7 @@ export const resume = {
     {
       title: "Full-Stack Software Engineer",
       org: "UNICCS Co., Ltd",
+      orgDescription: "Retail software provider; #1 core-system share among Japan's top 30 drugstore chains",
       start: "Nov. 2022",
       end: "Dec. 2024",
       bullets: [
@@ -58,6 +60,7 @@ export const resume = {
     {
       title: "Software Engineering Intern",
       org: "FPT Telecom",
+      orgDescription: "Part of FPT Corporation, one of Vietnam's largest tech companies",
       start: "Dec. 2021",
       end: "June 2022",
       bullets: [

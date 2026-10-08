@@ -35,6 +35,7 @@ function ExperienceRow({ entry }: { entry: ResumeEntry }) {
         <h3 className="font-semibold text-foreground">
           {entry.title} <span className="text-muted">–</span> {entry.org}
         </h3>
+        {entry.orgDescription && <p className="mt-1 text-sm italic text-muted">{entry.orgDescription}</p>}
         {entry.bullets.length > 0 && (
           <ul className="mt-3 space-y-2">
             {entry.bullets.map((bullet) => (
