@@ -1,38 +1,40 @@
 ---
-title: "ML-Assisted Natural Language to SQL Query System"
+title: "RAG-Assisted Natural Language to SQL System"
 slug: "nl-to-sql"
-summary: "A CSV-agnostic natural language to SQL system pairing a fine-tuned BERT intent classifier with a self-built, schema-aware rule-based SQL generator — no external LLM API calls."
+summary: "Ask questions about a dataset in plain English and get the SQL, a table, and a chart."
 date: "2026-08-19"
-tags: ["Python", "BERT", "PyTorch", "Hugging Face Transformers", "Streamlit", "SQLite", "Pandas"]
+tags: ["Python", "FastAPI", "React", "TypeScript", "BERT", "ONNX Runtime", "RAG", "Groq", "SQLite", "Vercel", "Render"]
 featured: true
 order: 2
-repoUrl: "https://github.com/dangkhoa241/ML-assisted-natural-language-to-SQL-query-system"
-liveUrl: "https://ml-assisted-natural-language-to-sql-query-system.streamlit.app/"
-coverImage: "/projects/nl-to-sql.webp"
+repoUrl: "https://github.com/dangkhoa241/RAG-assisted-natural-language-to-SQL-query-system"
+liveUrl: "https://nl2sql-assistant.vercel.app"
+reportNote: "Hosted on a free tier — the first load may take about a minute while the server wakes up."
+coverImage: "/projects/nl-to-sql-arr.webp"
 ---
 
-An end-to-end pipeline that lets users query **any uploaded CSV** in plain English — not just the healthcare example dataset it ships with. The app inspects whatever CSV is uploaded at runtime and adapts to its columns automatically.
+A fine-tuned BERT model routes each question by intent, term-gated retrieval sends only the matching business definitions (like "ARR" or "active account"), and gpt-oss-120b writes the SQL — with gpt-oss-20b and rule-based generators as fallbacks.
 
-**User question → Intent classification → SQL generation → Query execution → Table → Chart**
+**User question → Intent routing → Glossary retrieval → SQL generation → Query execution → Table → Chart**
 
-This is an enhanced, generalized rebuild of an earlier project ([LLMs-powered-natural-language-query-system-for-healthcare](https://github.com/dangkhoa241/LLMs-powered-natural-language-query-system-for-healthcare)), which only worked against one hardcoded healthcare dataset.
+## Results
+
+- On a held-out domain never used for tuning (settings frozen before testing), accuracy on definition-dependent questions rose from 0% to 95% — within 2.5 points of an oracle baseline
+- Diagnosed why naive few-shot RAG lowered accuracy (99.2% → 93.3%): retrieval matched the question's topic, not the SQL structure it needed
 
 ## Features
 
-- **Intent classification** — a BERT (`bert-base-uncased`) model fine-tuned on 1,250 domain-neutral examples across 14 domains (retail, education, HR, finance, healthcare, and more), classifying questions into filter / count / aggregate / compare / trend
-- **Schema-aware SQL generation** — a hand-built, rule-based NL→SQL engine that reads the uploaded CSV's actual columns, types, and values at runtime and matches them against the question, instead of relying on hardcoded column names
-- **Graceful degradation** — falls back to a lightweight keyword-based intent guesser when a trained BERT model isn't available, so the app is usable immediately
-- **Automatic visualization** — generates the appropriate chart (bar / pie / line) based on the detected intent, plus basic highest/lowest insights
-- **Streamlit UI** — upload a CSV, ask a question, and see the detected intent, generated SQL, results table, and chart end-to-end
+- **Intent-routed generation** — a fine-tuned BERT classifier identifies the question's intent before any SQL is written
+- **Term-gated retrieval** — only the business-glossary terms that actually match the question (like "ARR" or "active account") are retrieved and sent to the model, instead of the whole glossary on every prompt
+- **LLM with fallbacks** — gpt-oss-120b generates the SQL, falling back to gpt-oss-20b and then a rule-based generator if needed
+- **Read-only SQL safety layer** — a SELECT-only execution guard blocked 13 prompt-injection variants in testing
+- **Free-tier-friendly serving** — BERT exported to int8 ONNX Runtime, cutting serving memory from 754 MB to 243 MB so the whole app runs on free hosting (Vercel + Render)
 
-## Why rule-based instead of an LLM
+## Screenshots
 
-An LLM-API-driven SQL generator and two small local open-source text-to-SQL models were evaluated first. Both produced unreliable SQL for aggregate/compare/trend queries — missing `GROUP BY`, dropped aggregate functions, wrong comparison operators. The final design uses a fully self-contained, rule-based generator driven by the uploaded schema instead — no external API calls and no model download required to run it.
+![Line chart of net revenue by month answering the question "net revenue per month in 2024", with the generated SQL and a data table shown below it](/projects/nl-to-sql-trend.webp)
 
-## Architecture
+![Mobile view of the NL-to-SQL assistant answering a question with a chart, table, and SQL](/projects/nl-to-sql-mobile.webp)
 
-- `src/data_context.py` — CSV loading, type inference, SQLite table setup
-- `src/intent.py` — BERT intent classifier + keyword-based fallback
-- `src/sql_builder.py` — schema-aware, rule-based NL→SQL generation
-- `src/visualization.py` — chart rendering + insights
-- `src/model_training.ipynb` — notebook for training the intent model
+## History
+
+> Started as a BERT-based class project at University of the Pacific, then became [v1](https://github.com/dangkhoa241/ML-assisted-natural-language-to-SQL-query-system) — a Streamlit app that worked against any uploaded CSV.

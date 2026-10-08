@@ -104,13 +104,15 @@ export const resume = {
       liveUrl: "https://cinevibes-rho.vercel.app/",
     },
     {
-      name: "ML-Assisted Natural Language to SQL Query System",
+      name: "RAG-Assisted Natural Language to SQL System",
       org: "Personal project",
       description:
-        "CSV-agnostic natural language to SQL system: users upload any CSV and ask questions in plain English. Pairs a BERT intent classifier fine-tuned on 1,250 labeled examples spanning 14 domains and 5 query intents with a self-built, schema-aware SQL generator and no external LLM API calls.",
-      tech: "Python, BERT (bert-base-uncased), PyTorch, Streamlit, SQLite, Pandas, Matplotlib, Seaborn",
-      repoUrl: "https://github.com/dangkhoa241/ML-assisted-natural-language-to-SQL-query-system",
-      liveUrl: "https://ml-assisted-natural-language-to-sql-query-system.streamlit.app/",
+        "Routes each question by intent with a fine-tuned BERT model, retrieves only the matching business-glossary definitions (e.g., \"ARR\", \"active account\"), and has gpt-oss-120b generate the SQL, falling back to gpt-oss-20b and a rule-based generator. On a held-out domain never used for tuning (settings frozen before testing), accuracy on definition-dependent questions rose from 0% to 95%, within 2.5 points of an oracle.",
+      testing:
+        "Diagnosed why naive few-shot RAG lowered accuracy (99.2% to 93.3%): retrieval matched the question's topic, not the SQL structure it needed. A SELECT-only SQL safety layer blocked 13 prompt-injection variants in tests. Exported BERT to int8 ONNX Runtime, cutting serving memory from 754 MB to 243 MB to run on free hosting.",
+      tech: "Python, FastAPI, React, TypeScript, BERT, ONNX Runtime, RAG, Groq, SQLite, Vercel, Render",
+      repoUrl: "https://github.com/dangkhoa241/RAG-assisted-natural-language-to-SQL-query-system",
+      liveUrl: "https://nl2sql-assistant.vercel.app",
     },
   ] as ResumeProject[],
 };
