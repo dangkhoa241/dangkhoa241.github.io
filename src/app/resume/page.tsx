@@ -150,49 +150,19 @@ export default function ResumePage() {
             <SectionHeading>Projects</SectionHeading>
             {resume.projects.map((project) => (
               <div key={project.name} className="mt-3 break-inside-avoid first:mt-2">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                  <span className="font-bold underline decoration-black/30">{project.name}</span>
-                  <span className="flex items-baseline gap-2 text-sm italic text-black/90">
-                    {project.org}
-                    {(project.liveUrl || project.repoUrl) && (
-                      <span className="not-italic">
-                        {project.liveUrl && (
-                          <a href={project.liveUrl} className="text-accent underline decoration-accent/30">
-                            Live Demo
-                          </a>
-                        )}
-                        {project.liveUrl && project.repoUrl && " · "}
-                        {project.repoUrl && (
-                          <a href={project.repoUrl} className="text-accent underline decoration-accent/30">
-                            Source Code
-                          </a>
-                        )}
-                      </span>
-                    )}
-                  </span>
-                </div>
+                <p className="text-black">
+                  <span className="font-bold">{project.name}</span>
+                  <span className="italic text-black/90"> — {project.org}</span>
+                </p>
                 <ul className="mt-1 ml-5 list-disc space-y-0.5 text-[0.93rem] leading-snug text-black/90">
-                  <li>
-                    <span className="font-semibold">Description: </span>
-                    {project.description}
-                  </li>
-                  {project.testing && (
-                    <li>
-                      <span className="font-semibold">Testing & CI/CD: </span>
-                      {project.testing}
-                    </li>
-                  )}
-                  <li>
-                    <span className="font-semibold">Technologies: </span>
-                    {project.tech}
-                  </li>
-                  {project.responsibilities && (
-                    <li>
-                      <span className="font-semibold">Responsibilities: </span>
-                      {project.responsibilities}
-                    </li>
-                  )}
+                  {project.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
                 </ul>
+                <p className="mt-0.5 text-[0.93rem] leading-snug text-black/60">
+                  <span className="font-semibold">Tech: </span>
+                  {project.tech}
+                </p>
               </div>
             ))}
           </section>

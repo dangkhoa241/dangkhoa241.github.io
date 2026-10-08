@@ -12,12 +12,8 @@ export type ResumeEntry = {
 export type ResumeProject = {
   name: string;
   org: string;
-  description: string;
-  testing?: string;
+  bullets: string[];
   tech: string;
-  responsibilities?: string;
-  repoUrl?: string;
-  liveUrl?: string;
 };
 
 export const resume = {
@@ -86,36 +82,32 @@ export const resume = {
   projects: [
     {
       name: "US Weather Forecast Pipeline",
-      org: "Personal project",
-      description:
-        "End-to-end data platform (NWS + Open-Meteo → MongoDB → ClickHouse → Redis → Hono API → React/D3) holding 1.7M+ hourly observations and 3M+ forecast snapshots for 53 US cities, with idempotent incremental loads and data-quality checks. Deployed serverless on AWS as infrastructure as code (SAM): Lambda + EventBridge scheduled collection and ETL, S3 archive, live dashboard data via CloudFront, SNS heat alerts, and least-privilege IAM, all at $0 on the free tier. Measures forecast accuracy of NWS and 4 weather models (ECMWF most accurate: 2.0°F average error 1 day ahead), with a forecast replay and a D3 dashboard with US map → city → month → day drill-down.",
-      testing:
-        "Directed Claude Code to build 3 versions of each of 5 key features and kept the best each time (Redis caching cut p95 latency 12×); fixed SQL/NoSQL-injection and IAM flaws from security reviews; 209 tests in CI.",
-      tech: "Node.js, Hono, TypeScript, React, D3, MongoDB, ClickHouse, Redis, Docker, AWS (Lambda, S3, CloudFront, SNS, SAM), Vitest, Playwright",
-      repoUrl: "https://github.com/dangkhoa241/us-weather-pipeline",
-      liveUrl: "https://us-weather-pipeline.vercel.app",
-    },
-    {
-      name: "CineVibes",
-      org: "Personal project",
-      description:
-        "Full-stack movie discussion platform with spoiler-aware comment threads, trending rankings, and CineBot, an in-app AI assistant (Groq-hosted LLM) grounded in the app's MongoDB catalog through a search tool.",
-      testing:
-        "Wrote 57 automated tests: 51 Vitest API and integration tests across 4 suites, plus 6 Playwright end-to-end flows, running alongside lint and build on every push and pull request through GitHub Actions.",
-      tech: "React, Node.js, Express, MongoDB, Vite, JWT Auth, Groq, Vitest, Playwright, GitHub Actions",
-      repoUrl: "https://github.com/dangkhoa241/cinevibes",
-      liveUrl: "https://cinevibes-rho.vercel.app/",
+      org: "Personal Project",
+      bullets: [
+        "Built an end-to-end data pipeline (NWS + Open-Meteo → MongoDB → ClickHouse → Redis → Hono API → React) processing 1.7M+ hourly observations and 3M+ forecast snapshots for 53 US cities since 2023, with incremental loads and data-quality checks.",
+        "Deployed it on AWS as infrastructure as code (SAM): serverless collection and ETL on Lambda + EventBridge, S3 storage, CloudFront delivery, SNS alerts, and least-privilege IAM, all at $0 on the free tier.",
+        "Compared 4 weather models against a best-match baseline (ECMWF best: 2.0°F average error 1 day ahead) in a D3 dashboard with map drill-down and forecast replay.",
+        "Used Claude Code to build and compare 3 versions of 5 key features, keeping the best (Redis caching cut p95 latency 12×); fixed SQL/NoSQL-injection and IAM security flaws; 209 automated tests in CI.",
+      ],
+      tech: "Node.js, Hono, TypeScript, React, D3, MongoDB, ClickHouse, Redis, Docker, AWS (Lambda, S3, CloudFront, SAM), Vitest",
     },
     {
       name: "RAG-Assisted Natural Language to SQL System",
-      org: "Personal project",
-      description:
-        "Routes each question by intent with a fine-tuned BERT model, retrieves only the matching business-glossary definitions (e.g., \"ARR\", \"active account\"), and has gpt-oss-120b generate the SQL, falling back to gpt-oss-20b and a rule-based generator. On a held-out domain never used for tuning (settings frozen before testing), accuracy on definition-dependent questions rose from 0% to 95%, within 2.5 points of an oracle.",
-      testing:
-        "Diagnosed why naive few-shot RAG lowered accuracy (99.2% to 93.3%): retrieval matched the question's topic, not the SQL structure it needed. A SELECT-only SQL safety layer blocked 13 prompt-injection variants in tests; all gpt-oss-120b benchmark runs cost under $0.25. Exported BERT to int8 ONNX Runtime, cutting serving memory from 754 MB to 243 MB to run on free hosting.",
-      tech: "Python, FastAPI, React, TypeScript, BERT, ONNX Runtime, RAG, Groq, SQLite, pytest, Vercel, Render",
-      repoUrl: "https://github.com/dangkhoa241/RAG-assisted-natural-language-to-SQL-query-system",
-      liveUrl: "https://nl2sql-assistant.vercel.app",
+      org: "Personal Project",
+      bullets: [
+        "Built and deployed a full-stack RAG assistant (React + FastAPI) that answers plain-English questions about any CSV: BERT routes intent, term-gated retrieval supplies business definitions, and gpt-oss-120b writes SQL, with gpt-oss-20b and rule-based fallbacks.",
+        "Raised accuracy on definition-dependent questions from 0% to 95% on a held-out domain, with settings frozen before testing, within 2.5 points of an oracle; diagnosed why naive few-shot RAG lowered accuracy (99.2% → 93.3%): it matched topic, not SQL structure.",
+        "Built a SELECT-only SQL safety layer that blocked 13 prompt-injection variants; all 120B benchmark runs cost under $0.25.",
+      ],
+      tech: "Python, FastAPI, React, TypeScript, BERT, ONNX Runtime, Groq, SQLite, pytest, Vercel, Render",
+    },
+    {
+      name: "CineVibes",
+      org: "Personal Project",
+      bullets: [
+        "Built a full-stack movie platform with CineBot, an LLM assistant grounded in the app's MongoDB catalog via tool use; 57 tests in CI.",
+      ],
+      tech: "React, Node.js, Express, MongoDB, Vite, JWT Auth, Groq, Vitest, Playwright, GitHub Actions",
     },
   ] as ResumeProject[],
 };
