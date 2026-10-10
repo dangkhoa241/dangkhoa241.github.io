@@ -71,7 +71,7 @@ export const resume = {
     { label: "Frameworks", value: "React.js, Next.js, Vue.js, Node.js, Express, Spring Boot, FastAPI, Tailwind CSS, Hono, D3" },
     { label: "Databases", value: "PostgreSQL, MySQL, MongoDB, DB2, SQL Server, Oracle, ClickHouse, Redis" },
     { label: "Testing & CI/CD", value: "Vitest, Playwright, unit testing, integration testing, end-to-end testing, GitHub Actions" },
-    { label: "Cloud & Tools", value: "AWS (Lambda, S3, CloudFront, SNS, IAM), Docker, Vercel, Git, GitHub, Shell, Claude Code" },
+    { label: "Cloud & Tools", value: "AWS (Lambda, S3, CloudFront, SNS, DynamoDB, IAM), Docker, Vercel, Git, GitHub, Shell, Claude Code" },
     { label: "AI/ML", value: "PyTorch, Hugging Face Transformers, BERT fine-tuning, NLP, ONNX Runtime, RAG, LLM APIs (Groq)" },
     {
       label: "Concepts",
@@ -85,11 +85,11 @@ export const resume = {
       org: "Personal Project",
       bullets: [
         "Built an end-to-end data pipeline (NWS + Open-Meteo → MongoDB → ClickHouse → Redis → Hono API → React) processing 1.7M+ hourly observations and 3M+ forecast snapshots for 53 US cities since 2023, with incremental loads and data-quality checks.",
-        "Deployed it on AWS as infrastructure as code (SAM): serverless collection and ETL on Lambda + EventBridge, S3 storage, CloudFront delivery, SNS alerts, and least-privilege IAM, all at $0 on the free tier.",
+        "Deployed it serverless on AWS as infrastructure as code (SAM): Lambda + EventBridge collection and ETL, S3, CloudFront, least-privilege IAM, and public alert sign-ups (SNS filter policies, Turnstile CAPTCHA, DynamoDB rate limits), all at $0 on the free tier.",
         "Compared 4 weather models against a best-match baseline (ECMWF best: 2.0°F average error 1 day ahead) in a D3 dashboard with map drill-down and forecast replay.",
-        "Used Claude Code to build and compare 3 versions of 5 key features, keeping the best (Redis caching cut p95 latency 12×); fixed SQL/NoSQL-injection and IAM security flaws; 209 automated tests in CI.",
+        "Used Claude Code to build and compare 3 versions of 5 key features, keeping the best (Redis caching cut p95 latency 12×); fixed SQL/NoSQL-injection and IAM security flaws; 300+ automated tests in CI.",
       ],
-      tech: "Node.js, Hono, TypeScript, React, D3, MongoDB, ClickHouse, Redis, Docker, AWS (Lambda, S3, CloudFront, SAM), Vitest",
+      tech: "Node.js, Hono, TypeScript, React, D3, MongoDB, ClickHouse, Redis, Docker, AWS (Lambda, S3, CloudFront, SNS, DynamoDB, SAM), Cloudflare Turnstile, Vitest",
     },
     {
       name: "RAG-Assisted Natural Language to SQL System",
